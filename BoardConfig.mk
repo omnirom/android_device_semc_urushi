@@ -15,6 +15,9 @@
 -include device/semc/mogami-common/BoardConfigCommon.mk
 -include vendor/semc/urushi/BoardConfigVendor.mk
 
+# Recovery
+DEVICE_RESOLUTION := 480x854
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/semc/urushi/bluedroid
 

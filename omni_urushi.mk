@@ -15,10 +15,13 @@
 # Inherit device configuration
 $(call inherit-product, device/semc/urushi/full_urushi.mk)
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_mini_phone.mk)
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
-# Optional CM packages
+# Inherit some common omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
+
+# Optional packages
 PRODUCT_PACKAGES += \
     Galaxy4 \
     HoloSpiralWallpaper \
@@ -38,11 +41,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="ST18i-user 4.0.4 4.1.B.0.587 tL1_3w test-keys"
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := cm_urushi
+PRODUCT_NAME := omni_urushi
 PRODUCT_GMS_CLIENTID_BASE := android-sonyericsson
-
-# Release name
-PRODUCT_RELEASE_NAME := urushi
-
-# Custom tag for unofficial builds
-TARGET_UNOFFICIAL_BUILD_ID := LegacyXperia
